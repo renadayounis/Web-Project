@@ -1,0 +1,151 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background:linear-gradient(white,#736ab98d);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+form {
+    direction: ltr;
+    text-align: left;
+}
+
+
+.auth-page {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.card {
+  background-color: transparent;
+  width: 380px;
+  padding: 30px 25px;
+  border-radius: 18px;
+  box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+  direction: rtl;  
+}
+
+.input-box{
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.input-box i{
+    position: absolute;
+    right: 15px;
+    top: 62%;
+    transform: translateY(-50%);
+    font-size: 22px;
+}
+
+
+.brand {
+  font-size: 22px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.title {
+  font-size: 18px;
+  margin-bottom: 25px;
+  color: black;
+  text-align: center;
+}
+
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    padding-left: 5px;
+    font-size: 15px;
+    font-weight: 600;
+    color: black;       
+    letter-spacing: 0.5px;
+    text-transform: capitalize;
+    font-family: "Poppins", sans-serif;
+}
+
+input { 
+    width: 100%;
+    padding: 12px 45px 12px 15px;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 3px solid rgb(99, 97, 97);
+    border-radius: 40px;
+    font-size: 16px;
+    color: black;
+    transition: 0.2s;
+}
+
+
+
+input:focus {
+  border-color: #523372;
+  outline: none;
+  box-shadow: 0 0 5px rgba(82, 65, 120, 0.4);
+}
+
+
+.btn {
+  width: 100%;
+  background:#2c264f;
+  border: none;
+  padding: 12px;
+  color: white;
+  font-size: 16px;
+  margin-top: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.25s;
+  border-radius: 40px;
+}
+
+.btn:hover {
+  background: #3c2455;
+}
+
+.button-container{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn:active {
+    box-shadow: 0 5px 25px #3c2455;
+}
+
+.small {
+  font-size: 14px;
+  margin-top: 15px;
+  text-align: center;
+}
+
+.small a {
+  color: #39244a;
+  text-decoration: none;
+}
+
+.small a:hover {
+  text-decoration: underline;
+}
+
+
+#login-message {
+  text-align: center;
+  margin-top: 12px;
+  font-weight: 600;
+}

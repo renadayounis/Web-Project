@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title> login-Mganeto</title>
+  <link rel="stylesheet" href="login.css">
+  <link href='https://cdn.boxicons.com/3.0.6/fonts/basic/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+<main class="auth-page">
+  <div class="card">
+    <h1 class="brand">WELCOME TO MGANETO</h1>
+    <h2 class="title">login</h2>
+
+    <form id="login-form" autocomplete="on">
+      <div class="input-box">
+      <i class='bx  bx-envelope'></i>
+      <label class="box-label" for="login-email">Email</label>
+      <input id="login-email" type="email" placeholder="name@example.com" required>
+      </div>
+      <div class="input-box">
+      <i class='bx  bx-lock'></i> 
+      <label class="box-label" for=login-password>password</label>
+      <input id="login-password" type="password" placeholder="●●●●●●" required minlength="6">
+       </div>
+      <div class="button-container">
+      <button type="submit" class="btn">Enter</button>
+      </div>
+      <p class="small">not registered? <a href="signup.html">create new account</a></p>
+<p id="login-message"></p>
+    </form>
+  </div>
+</main>
+
+<script>
+  const loginForm = document.getElementById('login-form');
+  const loginMsg = document.getElementById('login-message');
+
+  loginForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    loginMsg.textContent = '';
+    loginMsg.style.color = 'red';
+
+    const email = document.getElementById('login-email').value.trim().toLowerCase();
+    const pass = document.getElementById('login-password').value;
+
+    if (!email || !pass) {
+      loginMsg.textContent = 'please enter your email and your password';
+      return;
+    }
+
+    const users = JSON.parse(localStorage.getItem('magneto_users') || '[]');
+    const user = users.find(u => u.email === email && u.password === pass);
+ if (!user) {
+      loginMsg.textContent = 'the email or password is in correct';
+      return;
+    }
+
+    localStorage.setItem('magneto_session', JSON.stringify({ email: user.email, name: user.name }));
+    loginMsg.style.color = 'green';
+    loginMsg.textContent ='logged in successfully';
+
+    setTimeout(() => {
+      window.location.href = 'home.html';
+    }, 800);
+  });
+</script>
+
+</body>
+</html>

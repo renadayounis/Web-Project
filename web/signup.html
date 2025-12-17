@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign up - Mganeto</title>
+    <link rel="stylesheet" href="signup.css">
+    <link href='https://cdn.boxicons.com/3.0.6/fonts/basic/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+ <main class="auth-page">
+  <h1 class="brand">MGANETO</h1>
+  <div class="wrapper">
+  <form id="signup-form" action="">
+    <h2 class="signup">Sign Up</h2>
+
+    <div class="input-box">
+      <i class='bx bx-user'></i> 
+      <label for="username">fullname</label>
+      <input id="username" type="text" placeholder="enter your name">
+    </div>
+
+    <div class="input-box">
+      <i class='bx bx-phone'></i>
+      <label for="phone">phone number</label>
+      <input id="phone" type="tel" placeholder="01xxxxxxxxx">
+    </div>
+
+    <div class="input-box"> 
+      <i class='bx bx-envelope'></i> 
+      <label for="email">email</label>
+      <input id="email" name="email" type="email" placeholder="example@mail.com" required>
+    </div>
+
+    <div class="input-box">
+      <i class='bx bx-home'></i> 
+      <label for="address">address</label>
+      <input id="address" type="text" placeholder="enter your address by detail">
+    </div>
+
+    <div class="input-box"> 
+      <i class='bx bx-t-shirt'></i> 
+      <label for="size">your size (T-shirt Size)</label>
+      <input id="size" type="text" placeholder="write your size (S/M/L/XL)">
+    </div>
+
+    <div class="input-box">
+      <i class='bx bx-football'></i> 
+      <label for="team">which team do you support?</label>
+      <input id="team" type="text" placeholder="write the team you support">
+    </div>
+
+    
+    <div class="input-box">
+      <i class='bx bx-lock'></i>
+      <label for="password">password</label>
+      <input id="password" type="password" placeholder="enter a strong password">
+    </div>
+
+    <div class="button-container">
+      <button type="submit" class="btn">create an account</button>
+    </div>
+
+    <div id="message"></div>
+
+  </form>
+  </div>
+ </main>
+
+  <script>
+  document.getElementById("signup-form").addEventListener("submit", function(e){
+    e.preventDefault();
+    
+    const name = document.getElementById("username").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const address = document.getElementById("address").value.trim();
+    const size = document.getElementById("size").value.trim();
+    const team = document.getElementById("team").value.trim();
+    const password = document.getElementById("password").value.trim();
+    
+    const msg = document.getElementById("message");
+
+    if(!name || !phone || !email || !size || !team || !address || !password){
+      msg.style.color = "red";
+      msg.textContent = "please fill all information";
+      return;
+    }
+
+    msg.style.color = "green";
+    msg.textContent = "the account has been created successfully!";
+  });
+</script>
+
+</body>
+</html>
